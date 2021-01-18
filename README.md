@@ -26,11 +26,13 @@
 	```
 	buildscript {
 	    repositories {
+            maven { url 'https://jitpack.io' }
 	        jcenter()  
 	    }
 	}
 	allprojects {
 	    repositories {
+            maven { url 'https://jitpack.io' }
 	        jcenter()
 	    }   
 	}
@@ -39,7 +41,7 @@
 2. 在 **app** 模块下添加依赖
 
 	```
-	implementation 'com.lishuaihua.android:AndroidStarters:1.1.3'
+	implementation 'com.github.ewgcat:AndroidStarters:1.0.0'
 	```
 
 3. 添加依赖图并启动

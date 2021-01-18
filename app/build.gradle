@@ -42,5 +42,7 @@ dependencies {
     // Optional: detect retained objects. This helps but is not required.
     releaseImplementation 'com.squareup.leakcanary:leakcanary-object-watcher-android:2.6'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation project(':starters')
+//    implementation project(':starters')
+    implementation 'com.github.ewgcat:AndroidStarters:1.0.0'
+
 }
