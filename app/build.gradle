@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.lishuaihua.starter.demo"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+    }
+
+    dexOptions {
+        javaMaxHeapSize "6g"
+        preDexLibraries = false
+    }
+    lintOptions {
+        abortOnError false
+        checkOnly 'Interoperability'
+        checkReleaseBuilds false
+        disable 'MissingTranslation'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'
+    //leakCanary for debug
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'
+    // NEW: LeakCanary for releases!
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-release:2.6'
+    // Optional: detect retained objects. This helps but is not required.
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-object-watcher-android:2.6'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation project(':starters')
+}
