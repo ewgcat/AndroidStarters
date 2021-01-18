@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import com.lishuaihua.starter.demo.R
+import com.lishuaihua.starter.demo.data.Singleton
 
 class SecondActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
